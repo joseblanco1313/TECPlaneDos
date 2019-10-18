@@ -95,7 +95,7 @@ public class ColaCheckIn {
     public String asignarAsientos(Pasajero pasajero) {
         Random numeroRandom1 = new Random();
         int randomAsiento1 = numeroRandom1.nextInt(300);
-        pasajero.setAsiento(asientos[randomAsiento1]);//+" " + pasajero.getPlanLealtad());
+        pasajero.setAsiento(asientos[randomAsiento1]); //+" " + pasajero.getPlanLealtad());
         return pasajero.getAsiento();
     }
 

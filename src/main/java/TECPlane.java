@@ -11,7 +11,7 @@ public class TECPlane {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        /*
+        
         //Se instancian dos colas
         ColaCheckIn cola = new ColaCheckIn();
         ColaCheckIn colaNueva = new ColaCheckIn();
@@ -65,11 +65,17 @@ public class TECPlane {
         p5.setDestino("Dubai");
         p5.setPlanLealtad("Platino");
         cola.enqueue(p5);
+        
+        
         System.out.println("Cola Normal: " + cola.toString());
-        cola.crearAsientos();
+        
         cola.colaPrioridad(cola, colaNueva);
         System.out.println("Cola prioridad:" + colaNueva.toString());
-
+        cola.crearAsientos();
+        
+        System.out.println("Lealtad: " + p1.getPlanLealtad());
+        System.out.println(cola.asignarAsientos(p1) + "" + p1.getPlanLealtad());
+/*
 //Probando vuelos
         Vuelos vuelo1 = new Vuelos();
         vuelo1.setOrigen("SJO");
@@ -95,7 +101,7 @@ public class TECPlane {
         lista.append(vuelo3);
         lista.puertasArray(numero);
         lista.asignarPuerta(lista);
-         */
+         
 
         ListaPasajeros lp = new ListaPasajeros();
 
@@ -152,6 +158,6 @@ public class TECPlane {
         System.out.println("The Min val is " + minHeap.delete());
         System.out.println("The Min val is " + minHeap.delete());
         //System.out.println("The Min val is " + minHeap.delete());
-
+*/
     }
 }

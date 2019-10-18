@@ -25,19 +25,19 @@ public class Pasajero {
     public void setnumero_prioridad(String planLealtad) {
         if (planLealtad.equals("Especial")) {
             numero_prioridad = 1;
-            System.out.println("Especial");
+            //System.out.println("Especial");
         }
         if (planLealtad.equals("Platino")) {
             numero_prioridad = 2;
-            System.out.println("Platino");
+            //System.out.println("Platino");
         }
         if (planLealtad.equals("Oro")) {
             numero_prioridad = 3;
-            System.out.println("Oro");
+            //System.out.println("Oro");
         }
         if (planLealtad.equals("Economico")) {
             numero_prioridad = 4;
-            System.out.println("Economico");
+            //System.out.println("Economico");
         }
     }
 
