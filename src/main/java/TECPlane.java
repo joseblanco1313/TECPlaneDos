@@ -10,7 +10,7 @@ public class TECPlane {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         
         //Se instancian dos colas
         ColaCheckIn cola = new ColaCheckIn();
@@ -75,6 +75,16 @@ public class TECPlane {
         
         System.out.println("Lealtad: " + p1.getPlanLealtad());
         System.out.println(cola.asignarAsientos(p1) + "" + p1.getPlanLealtad());
+        
+        
+        System.err.println("Funcion 5");
+        ModuloSalida Salida=new ModuloSalida();
+        Salida.enqueue(p1);
+        Salida.enqueue(p2);
+        Salida.enqueue(p3);
+        Salida.enqueue(p4);
+        Salida.enqueue(p5);
+        Salida.Migracion(Salida);
 /*
 //Probando vuelos
         Vuelos vuelo1 = new Vuelos();
