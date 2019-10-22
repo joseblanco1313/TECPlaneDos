@@ -1,4 +1,5 @@
 
+import java.util.Arrays;
 
 /**
  * Se crea el método main que ejecutará todo el código.
@@ -11,7 +12,7 @@ public class TECPlane {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws InterruptedException {
-        
+        /*
         //Se instancian dos colas
         ColaCheckIn cola = new ColaCheckIn();
         ColaCheckIn colaNueva = new ColaCheckIn();
@@ -111,7 +112,7 @@ public class TECPlane {
         lista.append(vuelo3);
         lista.puertasArray(numero);
         lista.asignarPuerta(lista);
-         
+         */
 
         ListaPasajeros lp = new ListaPasajeros();
 
@@ -155,19 +156,43 @@ public class TECPlane {
         prueba4.setPlanLealtad("Platino");
         lp.append(prueba4);
 
-        System.out.println("The Min Heap is ");
-        Heap minHeap = new Heap(15);
-        minHeap.insert(prueba1);
-        minHeap.insert(prueba2);
-        minHeap.insert(prueba3);
-        //minHeap.insert(prueba4);
+        int tam = lp.getSize();
 
+        Heap minHeap = new Heap(lp.getSize());
+        Heap x = new Heap(lp.getSize());
+        Heap nuevo = new Heap(lp.getSize());
 
-        //System.out.println(minHeap.toString());
-        System.out.println("The Min val is " + minHeap.delete());
-        System.out.println("The Min val is " + minHeap.delete());
-        System.out.println("The Min val is " + minHeap.delete());
-        //System.out.println("The Min val is " + minHeap.delete());
-*/
+        minHeap.insert(prueba1); //Especial   //1
+        minHeap.insert(prueba2); //Oro        //3
+        minHeap.insert(prueba3); //Platino    //2
+        minHeap.insert(prueba4); //Platino    //2
+
+        int arrA[] = {prueba1.getnumero_prioridad(), prueba2.getnumero_prioridad(), prueba3.getnumero_prioridad(), prueba4.getnumero_prioridad()};
+
+        System.out.println("Original array is: " + Arrays.toString(arrA));
+        minHeap.sort(arrA);
+        System.out.println("Sorted array is (Heap Sort): " + Arrays.toString(arrA));
+
+        for (int i = 0; i < arrA.length; i++) {
+            System.out.println("Insertando: " + arrA[i]);
+            int m = x.insert_dos(arrA[i]);
+            
+            if (m == 1) {
+                System.out.println("Especial");
+            }
+            if (m == 2) {
+                System.out.println("Platino");
+            }
+            if (m == 3) {
+                System.out.println("Oro");
+            }
+            if (m == 4) {
+                System.out.println("Economico");
+            }
+
+            System.out.println("");
+
+        }
+
     }
 }

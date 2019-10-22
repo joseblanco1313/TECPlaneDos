@@ -1,6 +1,5 @@
 
 //Se importa la clase Random
-
 import java.util.Random;
 
 /**
@@ -134,7 +133,6 @@ public class ColaCheckIn {
             if (oroElemento.getPlanLealtad().equalsIgnoreCase("oro")) {
                 colaNueva.enqueue(oroElemento);
 
-                oro = oro.getNext();
             }
 
             oro = oro.getNext();
@@ -159,17 +157,83 @@ public class ColaCheckIn {
     //Convierte datos a string
     @Override
     public String toString() {
-        String result = "**Cola de registro**\n";
+        String result = "\n";
         NodoPasajero tFront = this.front;
         int tSize = this.size;
         while (tSize != 0) {
             result += tFront.getNext().getElement().getNombre() + "\n ";
-            result += "Plan de Lealtad: " + tFront.getNext().getElement().getPlanLealtad() + "\n";
+            //result += "Plan de Lealtad: " + tFront.getNext().getElement().getPlanLealtad() + "\n";
             tFront = tFront.getNext();
             tSize--;
         }
         return result;
     }
     //Modificación del método "toString" para la cola de prioridad
+
+    public String verEspeciales() {
+        NodoPasajero temp = this.front.getNext();
+        String result = "";
+        while (temp != null) {
+            if (temp.getElement().getPlanLealtad().equals("Especial")) {
+                result = result + temp.getElement().getNombre() + ",";
+
+                temp = temp.getNext();
+            } else {
+                temp = temp.getNext();
+            }
+        }
+        System.out.println("Resultado: " + result);
+        return result;
+    }
+
+    public String verPlatino() {
+        NodoPasajero temp = this.front.getNext();
+        String result = "";
+        while (temp != null) {
+            if (temp.getElement().getPlanLealtad().equals("Platino")) {
+                result = result + temp.getElement().getNombre() + ",";
+                temp = temp.getNext();
+            } else {
+                temp = temp.getNext();
+            }
+        }
+        return result;
+    }
+
+    public String verOro() {
+        NodoPasajero temp = this.front.getNext();
+        String result = "";
+        while (temp != null) {
+            if (temp.getElement().getPlanLealtad().equals("Oro")) {
+                result = result + temp.getElement().getNombre() + ",";
+                temp = temp.getNext();
+            } else {
+                temp = temp.getNext();
+            }
+        }
+        return result;
+    }
+
+    public String verEconomico() {
+        NodoPasajero temp = this.front.getNext();
+        String result = "";
+        while (temp != null) {
+            if (temp.getElement().getPlanLealtad().equals("Economico")) {
+                result = result + temp.getElement().getNombre() + ",";
+                temp = temp.getNext();
+            } else {
+                temp = temp.getNext();
+            }
+        }
+        return result;
+    }
+    
+    public void prueba(ListaVuelos lista){
+        
+        //for(){
+            
+        //}
+        
+    }
 
 }

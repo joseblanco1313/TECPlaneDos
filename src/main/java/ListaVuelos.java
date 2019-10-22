@@ -177,7 +177,6 @@ public class ListaVuelos {
     }
     //Se crea un arreglo tipo "público (global)"
     public int[] puertas;
-
     /**
      * Método que creará un arreglo con el número de puertas ingresadas por el
      * usuario
@@ -195,12 +194,6 @@ public class ListaVuelos {
             contador++;
             asignar++;
         }
-
-        System.out.println("Lista ordenada: ");
-        for (int i : puertas) {
-            System.out.print(i + ", ");
-        }
-        System.out.println();
         return puertas;
     }
 
@@ -209,7 +202,8 @@ public class ListaVuelos {
      *
      * @param lista
      */
-    public void asignarPuerta(ListaVuelos lista) {
+    public String asignarPuerta(ListaVuelos lista) {
+        String resultado = "";
         //Ciclo para asignar una puerta aleatoria a cada vuelo
         for (Nodo temporal = lista.head.getNext(); temporal != null; temporal = temporal.getNext()) {
             Vuelos vueloElemento = temporal.getElement();
@@ -217,8 +211,10 @@ public class ListaVuelos {
             //Búsqueda lineal para evitar la repetición de puertas
             int randomNumero = random.nextInt(puertas.length);
             vueloElemento.setPuerta(puertas[randomNumero]);
+            resultado = lista + ",";
         }
-        System.out.println("Lista de vuelos: " + lista.toString());
+        return resultado;
+        //System.out.println("Lista de vuelos: " + lista.toString());
     }
 
     /**
