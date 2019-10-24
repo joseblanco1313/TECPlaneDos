@@ -157,11 +157,11 @@ public class ColaCheckIn {
     //Convierte datos a string
     @Override
     public String toString() {
-        String result = "\n";
+        String result = "";
         NodoPasajero tFront = this.front;
         int tSize = this.size;
         while (tSize != 0) {
-            result += tFront.getNext().getElement().getNombre() + "\n ";
+            result += tFront.getNext().getElement().getNombre() + ",";
             //result += "Plan de Lealtad: " + tFront.getNext().getElement().getPlanLealtad() + "\n";
             tFront = tFront.getNext();
             tSize--;
@@ -227,13 +227,29 @@ public class ColaCheckIn {
         }
         return result;
     }
-    
-    public void prueba(ListaVuelos lista){
-        
-        //for(){
-            
-        //}
-        
+
+
+    public String verVuelo() {
+        NodoPasajero temp = this.front.getNext();
+        String result = "";
+        //String zz = "";
+        while (temp != null) {
+            result = result + temp.getElement().getVuelo() + ",";
+            //String xyz = result;
+            //xyz.substring(8,10);
+            temp = temp.getNext();
+        }
+        return result;
+    }
+
+    public String verNombre() {
+        NodoPasajero temp = this.front.getNext();
+        String result = "";
+        while (temp != null) {
+            result = result + temp.getElement().getNombre() + ",";
+            temp = temp.getNext();
+        }
+        return result;
     }
 
 }

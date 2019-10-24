@@ -10,6 +10,7 @@ public class Vuelos {
     private String origen;
     private String destino;
     private int puerta;
+    private ListaPasajeros lista;
 
 //métodos get's y set's
     /**
@@ -66,5 +67,19 @@ public class Vuelos {
      */
     public void setPuerta(int puerta) {
         this.puerta = puerta;
+    }
+
+    /**
+     * @return the lista
+     */
+    public ListaPasajeros getLista() {
+        return lista;
+    }
+
+    /**
+     * @param lista the lista to set
+     */
+    public void setLista(ListaPasajeros lista) {
+        this.lista = lista;
     }
 }

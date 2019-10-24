@@ -14,7 +14,7 @@ public class Mensaje {
         try{
             Message message = Message.creator(new PhoneNumber("+50685184388"),
                     new PhoneNumber("+12056276912"),
-                    "Prueba Kevin").create();
+                    "Buenas Tardes").create();
 
             System.out.println(message.getSid());
         }

@@ -16,6 +16,7 @@ public class Pasajero {
     private String planLealtad;
     private int numero_prioridad;
     private String asiento;
+    private String vuelo;
 //Métodos gets y sets
 
     public int getnumero_prioridad() {
@@ -152,6 +153,20 @@ public class Pasajero {
      */
     public void setAsiento(String asiento) {
         this.asiento = asiento;
+    }
+
+    /**
+     * @return the vuelo
+     */
+    public String getVuelo() {
+        return vuelo;
+    }
+
+    /**
+     * @param vuelo the vuelo to set
+     */
+    public void setVuelo(String vuelo) {
+        this.vuelo = vuelo;
     }
 
 }

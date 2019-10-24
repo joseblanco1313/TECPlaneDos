@@ -3,7 +3,7 @@ public class ListaPasajeros{
     private class Node {
 
         //atributos
-        private Object element;
+        private Pasajero element;
         private Node next;
 
         //Constructores
@@ -12,23 +12,23 @@ public class ListaPasajeros{
             this.next = null;
         }
 
-        public Node(Object element) {
+        public Node(Pasajero element) {
             this.element = element;
             this.next = null;
         }
 
-        public Node(Object element, Node next) {
+        public Node(Pasajero element, Node next) {
             this.element = element;
             this.next = next;
         }
 
         //métodos
         
-        public Object getElement() {
+        public Pasajero getElement() {
             return this.element;
         }
 
-        public void setElement(Object element) {
+        public void setElement(Pasajero element) {
             this.element = element;
         }
 
@@ -65,7 +65,7 @@ public class ListaPasajeros{
      *
      * @param element El elemento a agregar
      */
-    public void insert(Object element) {
+    public void insert(Pasajero element) {
         //insertar en cualquier posiciÃ³n
         Node newNode = new Node(element, this.current.getNext());
         this.current.setNext(newNode);
@@ -77,7 +77,7 @@ public class ListaPasajeros{
 
     }
 
-    public void append(Object element) {
+    public void append(Pasajero element) {
         //siempre se pega al final de la lista
         Node newNode = new Node(element);
         this.tail.setNext(newNode);
@@ -193,12 +193,22 @@ public class ListaPasajeros{
         }
         return -1;
     }
+    
+    public void recorre(){
+        Node temp = this.head;
+        while(temp!=null){
+            
+        }
+    }
+    
+    
 
     /**
      * Devuelve la representación en String de la lista
      *
      * @return un string representado la lista
      */
+    @Override
     public String toString() {
         Node currentNode = this.head.getNext();
 
