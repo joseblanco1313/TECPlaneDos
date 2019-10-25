@@ -12,7 +12,7 @@ public class TECPlane {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws InterruptedException {
-        /*
+        
         //Se instancian dos colas
         ColaCheckIn cola = new ColaCheckIn();
         ColaCheckIn colaNueva = new ColaCheckIn();
@@ -26,6 +26,9 @@ public class TECPlane {
         p1.setDestino("Holanda");
         p1.setPlanLealtad("Especial");
         cola.enqueue(p1);
+        System.out.println("Ops: " + cola.ObtenerNombre(p1.getNombre()));
+        
+        /*
         //----------------------------------------------
         Pasajero p2 = new Pasajero();
         p2.setNombre("Pepito Perez");
@@ -113,7 +116,7 @@ public class TECPlane {
         lista.puertasArray(numero);
         lista.asignarPuerta(lista);
          */
-
+        /*
         ListaPasajeros lp = new ListaPasajeros();
 
         Pasajero prueba1 = new Pasajero();
@@ -193,6 +196,7 @@ public class TECPlane {
             System.out.println("");
 
         }
+*/
 
     }
 }

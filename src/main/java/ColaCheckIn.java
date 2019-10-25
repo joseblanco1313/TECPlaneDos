@@ -228,7 +228,6 @@ public class ColaCheckIn {
         return result;
     }
 
-
     public String verVuelo() {
         NodoPasajero temp = this.front.getNext();
         String result = "";
@@ -250,6 +249,51 @@ public class ColaCheckIn {
             temp = temp.getNext();
         }
         return result;
+    }
+
+    public String verAsiento() {
+        NodoPasajero temp = this.front.getNext();
+        String result = "";
+        while (temp != null) {
+            result = result + temp.getElement().getAsiento() + ",";
+            temp = temp.getNext();
+        }
+        return result;
+    }
+
+    public String verDestino() {
+        NodoPasajero temp = this.front.getNext();
+        String result = "";
+        while (temp != null) {
+            result = result + temp.getElement().getDestino() + ",";
+            temp = temp.getNext();
+        }
+        return result;
+    }
+
+    public Pasajero ObtenerNombre(String x) {
+        NodoPasajero temp = this.front.getNext();
+        Pasajero res = null;//(Pasajero) this.front.getNext().getElement();
+        while (temp != null) {
+            if (temp.getElement().getNombre().equals(x)) {
+                res = temp.getElement();
+                temp = temp.getNext();
+            } else {
+                temp = temp.getNext();
+            }
+        }
+        return res;
+    }
+
+    public Pasajero ObtenerPasajero() {
+        NodoPasajero temp = this.front.getNext();
+        Pasajero res = null;//(Pasajero) this.front.getNext().getElement();
+        while (temp != null) {
+            res = temp.getElement();
+            temp = temp.getNext();
+
+        }
+        return res;
     }
 
 }
