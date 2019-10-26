@@ -8,6 +8,7 @@ public class PruebaAPI {
 
     public static void main(String... args) throws Exception {
         // Instantiates a client
+        System.out.println("-.-");
         try (LanguageServiceClient language = LanguageServiceClient.create()) {
 
             // The text to analyze
@@ -33,6 +34,9 @@ public class PruebaAPI {
             } else {
                 System.out.println("Claramente Negativo");
             }
+        }
+        catch (Exception e){
+            System.out.println("Mameishooon -.-");
         }
     }
 

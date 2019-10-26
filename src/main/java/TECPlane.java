@@ -1,5 +1,6 @@
 
 import java.util.Arrays;
+import javax.swing.JOptionPane;
 
 /**
  * Se crea el método main que ejecutará todo el código.
@@ -12,7 +13,7 @@ public class TECPlane {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws InterruptedException {
-        
+
         //Se instancian dos colas
         ColaCheckIn cola = new ColaCheckIn();
         ColaCheckIn colaNueva = new ColaCheckIn();
@@ -27,7 +28,13 @@ public class TECPlane {
         p1.setPlanLealtad("Especial");
         cola.enqueue(p1);
         System.out.println("Ops: " + cola.ObtenerNombre(p1.getNombre()));
-        
+        ModuloSalida salida = new ModuloSalida();
+        String respuesta;
+        respuesta = JOptionPane.showInputDialog(null, "Por favor, rellene esta encuesta " + "\n" + " indique las observaciones que tienen del servicio y atención recibida");
+        String fin = respuesta;
+        System.out.println("FIN: " + fin);
+        salida.AnalisisComentario(fin);
+
         /*
         //----------------------------------------------
         Pasajero p2 = new Pasajero();
@@ -116,7 +123,7 @@ public class TECPlane {
         lista.puertasArray(numero);
         lista.asignarPuerta(lista);
          */
-        /*
+ /*
         ListaPasajeros lp = new ListaPasajeros();
 
         Pasajero prueba1 = new Pasajero();
@@ -196,7 +203,6 @@ public class TECPlane {
             System.out.println("");
 
         }
-*/
-
+         */
     }
 }

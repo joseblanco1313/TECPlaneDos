@@ -1,3 +1,4 @@
+/*
 import com.twilio.Twilio;
 import com.twilio.rest.api.v2010.account.Message;
 import com.twilio.type.PhoneNumber;
@@ -14,7 +15,7 @@ public class Mensaje {
         try{
             Message message = Message.creator(new PhoneNumber("+50685184388"),
                     new PhoneNumber("+12056276912"),
-                    "Buenas Tardes").create();
+                    "Se despanochó el API").create();
 
             System.out.println(message.getSid());
         }
@@ -24,3 +25,4 @@ public class Mensaje {
     }
 
 }
+*/
