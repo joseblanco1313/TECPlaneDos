@@ -19,6 +19,7 @@ public class InterfazGrafica extends javax.swing.JFrame {
     ListaVuelos listavuelos = new ListaVuelos();
     ColaCheckIn lista_pasajeros = new ColaCheckIn();
     ModuloSalida salida = new ModuloSalida();
+    Mensaje sms = new Mensaje();
 
     //Pasajero xd = new Pasajero();
     ColaCheckIn xdd = new ColaCheckIn();
@@ -801,6 +802,7 @@ public class InterfazGrafica extends javax.swing.JFrame {
             String asiento = cola.asignarAsientos(pasajeros) + "" + jComboBox6.getSelectedItem().toString();
             System.out.println(asiento);
             JOptionPane.showMessageDialog(null, "Pasajero registrado con éxito " + "\n" + "Su asiento: " + asiento);
+            //sms.EnviarMensaje(asiento);
 
             jTextField1.setText("");
             jTextField2.setText("");
