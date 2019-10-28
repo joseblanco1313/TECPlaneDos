@@ -7,7 +7,7 @@ import java.util.Random;
  * para el vuelo.
  */
 public class ColaCheckIn {
-
+    //
     //Se definen los atributos
     private NodoPasajero front;
     private NodoPasajero rear;

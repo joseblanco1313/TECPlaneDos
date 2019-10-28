@@ -5,7 +5,6 @@
  * asignar
  */
 public class Puerta {
-
     //Atributo
     private int numeroPuerta;
 //Métodos Get's y set's
