@@ -1,4 +1,4 @@
-
+//
 //Se importa Random
 
 import java.util.Random;
@@ -32,16 +32,16 @@ public class ListaVuelos {
      */
     public void insertar(Vuelos element) {
         //insertar en cualquier posiciÃ³n
-        Nodo newNode = new Nodo(element, this.current, this.current.getNext());
-        if (this.current != this.tail) {
-            this.current.getNext().setPrevious(newNode);
+        Nodo newNode = new Nodo(element, this.getCurrent(), this.getCurrent().getNext());
+        if (this.getCurrent() != this.getTail()) {
+            this.getCurrent().getNext().setPrevious(newNode);
         }
-        this.current.setNext(newNode);
+        this.getCurrent().setNext(newNode);
         //necesario si se está insertando al final de la lista
-        if (this.current == this.tail) {
-            this.tail = tail.getNext();
+        if (this.getCurrent() == this.getTail()) {
+            this.setTail(getTail().getNext());
         }
-        this.size++;
+        this.setSize(this.getSize() + 1);
     }
 
     /**
@@ -51,10 +51,10 @@ public class ListaVuelos {
      */
     public void append(Vuelos element) {
         //insertar en cualquier posiciÃ³n
-        Nodo newNode = new Nodo(element, this.tail, null);
-        this.tail.setNext(newNode);
-        this.tail = newNode;
-        this.size++;
+        Nodo newNode = new Nodo(element, this.getTail(), null);
+        this.getTail().setNext(newNode);
+        this.setTail(newNode);
+        this.setSize(this.getSize() + 1);
     }
 
     /**
@@ -63,28 +63,28 @@ public class ListaVuelos {
      */
     public void remover() {
         //verifica si la lista está vacía
-        if ((this.head == this.current) && (this.head == this.tail)) {
+        if ((this.getHead() == this.getCurrent()) && (this.getHead() == this.getTail())) {
             System.out.println("Lista vacía");
             return;
         }
         //Valida si está en el nodo especial
-        if (this.head == this.current) {
+        if (this.getHead() == this.getCurrent()) {
             System.out.println("No se puede borrar");
             return;
         }
 
         //Verifica si el nodo current es el último elemento
-        if (this.current == this.tail) {
-            this.current.getPrevious().setNext(null);
-            this.position--;
-            this.tail = this.current.getPrevious();
+        if (this.getCurrent() == this.getTail()) {
+            this.getCurrent().getPrevious().setNext(null);
+            this.setPosition(this.getPosition() - 1);
+            this.setTail(this.getCurrent().getPrevious());
         } else {
-            this.current.getNext().setPrevious(this.current.getPrevious());
-            this.current.getPrevious().setNext(this.current.getNext());
+            this.getCurrent().getNext().setPrevious(this.getCurrent().getPrevious());
+            this.getCurrent().getPrevious().setNext(this.getCurrent().getNext());
 
         }
-        this.current = this.current.getPrevious();
-        this.size--;
+        this.setCurrent(this.getCurrent().getPrevious());
+        this.setSize(this.getSize() - 1);
 
     }
 
@@ -94,7 +94,7 @@ public class ListaVuelos {
      * @return el elemento del nodo actual
      */
     public Vuelos getElement() {
-        return this.current.getElement();
+        return this.getCurrent().getElement();
     }
 
     /**
@@ -112,12 +112,12 @@ public class ListaVuelos {
      * @return valor boleano (true o false)
      */
     public boolean next() {
-        if (this.current == this.tail) {
+        if (this.getCurrent() == this.getTail()) {
             System.out.println("Último nodo");
             return false;
         }
-        this.current = this.current.getNext();
-        this.position++;
+        this.setCurrent(this.getCurrent().getNext());
+        this.setPosition(this.getPosition() + 1);
         return true;
     }
 
@@ -127,12 +127,12 @@ public class ListaVuelos {
      * @return valor boleano (true o false)
      */
     public boolean previous() {
-        if (this.current == this.head) {
+        if (this.getCurrent() == this.getHead()) {
             System.out.println("Actualmente en primer nodo, no se puede retroceder");
             return false;
         }
-        this.current = this.current.getPrevious();
-        this.position--;
+        this.setCurrent(this.getCurrent().getPrevious());
+        this.setPosition(this.getPosition() - 1);
         return true;
     }
 
@@ -143,11 +143,11 @@ public class ListaVuelos {
      * @param posicion
      */
     public void insert(Vuelos elemento, int posicion) {
-        this.size = 0;
-        Nodo temporal = this.head;
-        while (this.size != posicion) {
+        this.setSize(0);
+        Nodo temporal = this.getHead();
+        while (this.getSize() != posicion) {
             temporal = temporal.getNext();
-            size++;
+            setSize(getSize() + 1);
         }
         Nodo nuevoNodo = new Nodo(elemento);
         Nodo temporalNext = temporal.getNext();
@@ -162,12 +162,12 @@ public class ListaVuelos {
      * @param posicion
      */
     public void remove(int posicion) {
-        this.size = -1;
-        Nodo temporal = this.head;
+        this.setSize(-1);
+        Nodo temporal = this.getHead();
         //Ciclo para encontrar la posición
-        while (this.size != posicion) {
+        while (this.getSize() != posicion) {
             temporal = temporal.getNext();
-            this.size++;
+            this.setSize(this.getSize() + 1);
         }
         Nodo temporalAnterior = temporal.getPrevious();
         Nodo temporalNext1 = temporal.getNext();
@@ -176,7 +176,7 @@ public class ListaVuelos {
 
     }
     //Se crea un arreglo tipo "público (global)"
-    public int[] puertas;
+    private int[] puertas;
     /**
      * Método que creará un arreglo con el número de puertas ingresadas por el
      * usuario
@@ -185,7 +185,7 @@ public class ListaVuelos {
      * @return
      */
     public int[] puertasArray(int numero) {
-        puertas = new int[numero];
+        setPuertas(new int[numero]);
         int contador = 1;
         int asignar = 0;
         //Ciclo para agregar datos al arreglo
@@ -205,7 +205,7 @@ public class ListaVuelos {
     public String asignarPuerta(ListaVuelos lista) {
         String resultado = "";
         //Ciclo para asignar una puerta aleatoria a cada vuelo
-        for (Nodo temporal = lista.head.getNext(); temporal != null; temporal = temporal.getNext()) {
+        for (Nodo temporal = lista.getHead().getNext(); temporal != null; temporal = temporal.getNext()) {
             Vuelos vueloElemento = temporal.getElement();
             Random random = new Random();
             //Búsqueda lineal para evitar la repetición de puertas
@@ -224,7 +224,7 @@ public class ListaVuelos {
      */
     @Override
     public String toString() {
-        Nodo currentNode = this.head.getNext();
+        Nodo currentNode = this.getHead().getNext();
 
         StringBuilder result = new StringBuilder();
 
@@ -238,5 +238,75 @@ public class ListaVuelos {
             currentNode = currentNode.getNext();
         }
         return result.toString();
+    }
+
+    /**
+     * @return the head
+     */
+    public Nodo getHead() {
+        return head;
+    }
+
+    /**
+     * @param head the head to set
+     */
+    public void setHead(Nodo head) {
+        this.head = head;
+    }
+
+    /**
+     * @return the current
+     */
+    public Nodo getCurrent() {
+        return current;
+    }
+
+    /**
+     * @param current the current to set
+     */
+    public void setCurrent(Nodo current) {
+        this.current = current;
+    }
+
+    /**
+     * @return the tail
+     */
+    public Nodo getTail() {
+        return tail;
+    }
+
+    /**
+     * @param tail the tail to set
+     */
+    public void setTail(Nodo tail) {
+        this.tail = tail;
+    }
+
+    /**
+     * @return the position
+     */
+    public int getPosition() {
+        return position;
+    }
+
+    /**
+     * @param position the position to set
+     */
+    public void setPosition(int position) {
+        this.position = position;
+    }
+
+    /**
+     * @param size the size to set
+     */
+    public void setSize(int size) {
+        this.size = size;
+    }
+
+    /**
+     * @param puertas the puertas to set
+     */
+    public void setPuertas(int[] puertas) {
+        this.puertas = puertas;
     }
 }

@@ -1,4 +1,4 @@
-
+//
 
 /**
  * Se crea la clase puerta: Para seleccionar el número de puertas que se desea

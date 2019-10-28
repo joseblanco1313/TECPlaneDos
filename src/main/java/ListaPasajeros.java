@@ -1,5 +1,5 @@
 public class ListaPasajeros{
-
+//
     private class Node {
 
         //atributos

@@ -1,7 +1,7 @@
 
 //Se importa la clase Random
 import java.util.Random;
-
+//
 /**
  * Se crea la clase "ColaCheckIn": Será una cola donde los usuarios se registren
  * para el vuelo.
